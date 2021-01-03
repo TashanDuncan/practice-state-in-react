@@ -9,12 +9,11 @@ class StarRating extends Component {
   }
 
   // Write a function that returns 5 Star components
-  renderStars = () => {
+  renderStars = (starValue) => {
     const totalStars = []
-    const starValue = 5;
 
     for (let i = 0; i < starValue; i++){
-      totalStars.push(<Star />)
+      totalStars.push(<Star key = {i}/>)
     }
 
     return totalStars;
@@ -29,7 +28,7 @@ class StarRating extends Component {
     return (
       <ul className="course--stars">
         {/* Render the Star components */}
-        {this.renderStars()}
+        {this.renderStars(5)}
       </ul>
     );
   }
