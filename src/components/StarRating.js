@@ -13,7 +13,12 @@ class StarRating extends Component {
     const totalStars = []
 
     for (let i = 0; i < starValue; i++){
-      totalStars.push(<Star key = {i}/>)
+      totalStars.push(
+      <Star 
+      key = {i}
+      handleRating = {() => this.handleRating(i + 1)}
+  
+      />)
     }
 
     return totalStars;
@@ -22,7 +27,10 @@ class StarRating extends Component {
 
   // Write an event handler that updates the rating state.
   // Pass the function to a Star component via props
-
+  handleRating = (rating) => {
+    this.setState({rating})
+    console.log(this.state)
+  }
 
   render() {
     return (
